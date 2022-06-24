@@ -1,0 +1,26 @@
+<h2>Start editing to see some magic happen :)</h2>
+<input [(ngModel)]="itemName" type="text" placeholder="item" />
+
+<input [(ngModel)]="addCart" type="number" placeholder="cart no." />
+
+<button (click)="addList(itemName, addCart)">Add</button>
+
+<div class="cart-1">
+  <h1>cart-1</h1>
+  <ul>
+    <li *ngFor="let product of products">
+      {{ product }}--<button (click)="RemoveProduct(product)">Remove</button>
+    </li>
+  </ul>
+  <h2 *ngIf="!products.length">there is no item</h2>
+</div>
+<br />
+
+<div class="cart-2">
+  <h1>cart-2</h1>
+  <ul >
+    <li *ngFor="let product of products2">
+      {{ product }}--<button (click)="RemoveProduct2(product)">Remove</button>
+    </li>
+  </ul>
+</div>
